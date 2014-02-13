@@ -4,7 +4,7 @@
 
   <groupId>br.com.dasa</groupId>
   <artifactId>wsintegraClientAPI</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
   <packaging>jar</packaging>
 
   <name>wsintegraClientAPI</name>
@@ -44,21 +44,6 @@
                             <staleFile>${project.build.directory}/jaxws/stale/SiscanWS.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-SiscanWS</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>ciewebservice.dasa.com.br/wsintegra/VerificaConexao.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName></packageName>
-                            <wsdlLocation>http://ciewebservice.dasa.com.br/wsintegra/VerificaConexao?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/VerificaConexao.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-VerificaConexao</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>
