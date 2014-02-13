@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="LabServiceImplService" targetNamespace="http://lab.ws.hepic.first.pt/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://lab.ws.hepic.first.pt/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://lab.ws.hepic.first.pt/" xmlns:tns="http://lab.ws.hepic.first.pt/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="createSession" type="tns:createSession"/>
+  <xs:element name="createSessionResponse" type="tns:createSessionResponse"/>
+  <xs:element name="getLastUpdatedDate" type="tns:getLastUpdatedDate"/>
+  <xs:element name="getLastUpdatedDateResponse" type="tns:getLastUpdatedDateResponse"/>
+  <xs:element name="labResult" type="tns:labResult"/>
+  <xs:element name="sendResults" type="tns:sendResults"/>
+  <xs:element name="sendResultsResponse" type="tns:sendResultsResponse"/>
+  <xs:complexType name="sendResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sessionTicket" type="xs:string"/>
+      <xs:element minOccurs="0" name="sessionUser" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="labResults" type="tns:labResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="labResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="analisysDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="analisysExId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="antibiogram" nillable="true" type="tns:antibiogram"/>
+      <xs:element minOccurs="0" name="bugId" type="xs:string"/>
+      <xs:element minOccurs="0" name="bugName" type="xs:string"/>
+      <xs:element minOccurs="0" name="episodeId" type="xs:string"/>
+      <xs:element minOccurs="0" name="externalId" type="xs:string"/>
+      <xs:element minOccurs="0" name="harvestDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="internalUnitExid" type="xs:string"/>
+      <xs:element minOccurs="0" name="internalUnitPhysicalExid" type="xs:string"/>
+      <xs:element minOccurs="0" name="labComment" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="parameterDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="parameterId" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientClass" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientExId" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientName" type="xs:string"/>
+      <xs:element minOccurs="0" name="positive" type="xs:string"/>
+      <xs:element minOccurs="0" name="quantification" type="xs:string"/>
+      <xs:element minOccurs="0" name="refValue" type="xs:string"/>
+      <xs:element minOccurs="0" name="resultDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="resultValue" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceId" type="xs:string"/>
+      <xs:element minOccurs="0" name="servicePhysicalDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="servicePhysicalExid" type="xs:string"/>
+      <xs:element minOccurs="0" name="specimenDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="specimenId" type="xs:string"/>
+      <xs:element minOccurs="0" name="specimenSourceDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="specimenSourceExid" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="unitValue" type="xs:string"/>
+      <xs:element minOccurs="0" name="wardDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="wardId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="antibiogram">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="antibioticDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="antibioticId" type="xs:string"/>
+      <xs:element minOccurs="0" name="concentration" type="xs:string"/>
+      <xs:element minOccurs="0" name="position" type="xs:string"/>
+      <xs:element minOccurs="0" name="resistanceTypeDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="resistanceTypeId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendResultsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:invocationResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invocationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLastUpdatedDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sessionID" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="minDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="minDateDbMask" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLastUpdatedDateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createSessionResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionException" type="tns:SessionException"/>
+  <xs:complexType name="SessionException">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createSessionResponse">
+    <wsdl:part element="tns:createSessionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendResults">
+    <wsdl:part element="tns:sendResults" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SessionException">
+    <wsdl:part element="tns:SessionException" name="SessionException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastUpdatedDateResponse">
+    <wsdl:part element="tns:getLastUpdatedDateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendResultsResponse">
+    <wsdl:part element="tns:sendResultsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSession">
+    <wsdl:part element="tns:createSession" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastUpdatedDate">
+    <wsdl:part element="tns:getLastUpdatedDate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LabService">
+    <wsdl:operation name="sendResults">
+      <wsdl:input message="tns:sendResults" name="sendResults">
+    </wsdl:input>
+      <wsdl:output message="tns:sendResultsResponse" name="sendResultsResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SessionException" name="SessionException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLastUpdatedDate">
+      <wsdl:input message="tns:getLastUpdatedDate" name="getLastUpdatedDate">
+    </wsdl:input>
+      <wsdl:output message="tns:getLastUpdatedDateResponse" name="getLastUpdatedDateResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SessionException" name="SessionException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSession">
+      <wsdl:input message="tns:createSession" name="createSession">
+    </wsdl:input>
+      <wsdl:output message="tns:createSessionResponse" name="createSessionResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SessionException" name="SessionException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabServiceImplServiceSoapBinding" type="tns:LabService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getLastUpdatedDate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLastUpdatedDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLastUpdatedDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SessionException">
+        <soap:fault name="SessionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendResults">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendResults">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendResultsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SessionException">
+        <soap:fault name="SessionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSession">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createSession">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createSessionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SessionException">
+        <soap:fault name="SessionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabServiceImplService">
+    <wsdl:port binding="tns:LabServiceImplServiceSoapBinding" name="LabServiceImplPort">
+      <soap:address location="http://hdi.hepic.com.br:8080/HepicWS/api/lab"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/D:/Cientificalab/Divinópolis/lab.wsdl" uri="wsdl/lab.wsdl"/>
+    <system systemId="http://aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS?wsdl" uri="wsdl/aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS.wsdl"/>
+    <system systemId="http://ciewebservice.dasa.com.br/wsintegra/VerificaConexao?wsdl" uri="wsdl/ciewebservice.dasa.com.br/wsintegra/VerificaConexao.wsdl"/>
+    <system systemId="http://ciewebservice.dasa.com.br:80/wsintegra/VerificaConexao?xsd=1" uri="wsdl/ciewebservice.dasa.com.br_80/wsintegra/VerificaConexao.xsd_1.xsd"/>
+</catalog>

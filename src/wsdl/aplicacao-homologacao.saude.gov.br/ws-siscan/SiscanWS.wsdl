@@ -1,0 +1,1208 @@
+<definitions name='SiscanWS' targetNamespace='http://www.saude.gov.br/siscan-ws' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://www.saude.gov.br/siscan-ws' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://www.saude.gov.br/siscan-ws' version='1.0' xmlns:tns='http://www.saude.gov.br/siscan-ws' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='SiscanFault' type='tns:SiscanFault'/>
+   <xs:element name='consultarRequisicaoExameCitopatologicoColoUtero' type='tns:consultarRequisicaoExameCitopatologicoColoUtero'/>
+   <xs:element name='consultarRequisicaoExameCitopatologicoColoUteroResponse' type='tns:consultarRequisicaoExameCitopatologicoColoUteroResponse'/>
+   <xs:element name='consultarRequisicaoExameCitopatologicoMama' type='tns:consultarRequisicaoExameCitopatologicoMama'/>
+   <xs:element name='consultarRequisicaoExameCitopatologicoMamaResponse' type='tns:consultarRequisicaoExameCitopatologicoMamaResponse'/>
+   <xs:element name='consultarRequisicaoExameHistopatologicoColo' type='tns:consultarRequisicaoExameHistopatologicoColo'/>
+   <xs:element name='consultarRequisicaoExameHistopatologicoColoResponse' type='tns:consultarRequisicaoExameHistopatologicoColoResponse'/>
+   <xs:element name='consultarRequisicaoExameHistopatologicoMama' type='tns:consultarRequisicaoExameHistopatologicoMama'/>
+   <xs:element name='consultarRequisicaoExameHistopatologicoMamaResponse' type='tns:consultarRequisicaoExameHistopatologicoMamaResponse'/>
+   <xs:element name='consultarRequisicaoExameMamografia' type='tns:consultarRequisicaoExameMamografia'/>
+   <xs:element name='consultarRequisicaoExameMamografiaResponse' type='tns:consultarRequisicaoExameMamografiaResponse'/>
+   <xs:element name='liberarLaudo' type='tns:liberarLaudo'/>
+   <xs:element name='liberarLaudoResponse' type='tns:liberarLaudoResponse'/>
+   <xs:element name='resultadoExameHistopatologicoColoUteroWsdl' type='tns:resultadoExameHistopatologicoColoUteroWsdl'/>
+   <xs:element name='salvarRequisicaoCitopatologicoColoUtero' type='tns:salvarRequisicaoCitopatologicoColoUtero'/>
+   <xs:element name='salvarRequisicaoCitopatologicoColoUteroResponse' type='tns:salvarRequisicaoCitopatologicoColoUteroResponse'/>
+   <xs:element name='salvarRequisicaoExameCitopatologicoMama' type='tns:salvarRequisicaoExameCitopatologicoMama'/>
+   <xs:element name='salvarRequisicaoExameCitopatologicoMamaResponse' type='tns:salvarRequisicaoExameCitopatologicoMamaResponse'/>
+   <xs:element name='salvarRequisicaoExameHistopatologicoColoUtero' type='tns:salvarRequisicaoExameHistopatologicoColoUtero'/>
+   <xs:element name='salvarRequisicaoExameHistopatologicoColoUteroResponse' type='tns:salvarRequisicaoExameHistopatologicoColoUteroResponse'/>
+   <xs:element name='salvarRequisicaoExameHistopatologicoMama' type='tns:salvarRequisicaoExameHistopatologicoMama'/>
+   <xs:element name='salvarRequisicaoExameHistopatologicoMamaResponse' type='tns:salvarRequisicaoExameHistopatologicoMamaResponse'/>
+   <xs:element name='salvarRequisicaoExameMamografia' type='tns:salvarRequisicaoExameMamografia'/>
+   <xs:element name='salvarRequisicaoExameMamografiaResponse' type='tns:salvarRequisicaoExameMamografiaResponse'/>
+   <xs:element name='salvarResultadoExameCitopatologicoColoUtero' type='tns:salvarResultadoExameCitopatologicoColoUtero'/>
+   <xs:element name='salvarResultadoExameCitopatologicoColoUteroResponse' type='tns:salvarResultadoExameCitopatologicoColoUteroResponse'/>
+   <xs:element name='salvarResultadoExameCitopatologicoMama' type='tns:salvarResultadoExameCitopatologicoMama'/>
+   <xs:element name='salvarResultadoExameCitopatologicoMamaResponse' type='tns:salvarResultadoExameCitopatologicoMamaResponse'/>
+   <xs:element name='salvarResultadoExameHistopatologicoColoUtero' type='tns:salvarResultadoExameHistopatologicoColoUtero'/>
+   <xs:element name='salvarResultadoExameHistopatologicoColoUteroResponse' type='tns:salvarResultadoExameHistopatologicoColoUteroResponse'/>
+   <xs:element name='salvarResultadoExameHistopatologicoMama' type='tns:salvarResultadoExameHistopatologicoMama'/>
+   <xs:element name='salvarResultadoExameHistopatologicoMamaResponse' type='tns:salvarResultadoExameHistopatologicoMamaResponse'/>
+   <xs:element name='salvarResultadoExameMamografia' type='tns:salvarResultadoExameMamografia'/>
+   <xs:element name='salvarResultadoExameMamografiaResponse' type='tns:salvarResultadoExameMamografiaResponse'/>
+   <xs:complexType name='salvarRequisicaoExameHistopatologicoMama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='requisicao' type='tns:requisicaoHistopatologicoMamaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='identificacao'>
+    <xs:sequence>
+     <xs:element name='email' type='xs:string'/>
+     <xs:element name='senha' type='xs:string'/>
+     <xs:element name='cnesPrestador' type='xs:string'/>
+     <xs:element name='cnesUnidadeSaude' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='requisicaoHistopatologicoMamaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:requisicaoExameWsdl'>
+      <xs:sequence>
+       <xs:element name='codigoTipoExameHistopatologico' type='xs:string'/>
+       <xs:element name='apresentaRiscoElevadoCancerMama' type='xs:string'/>
+       <xs:element minOccurs='0' name='estaGravidaAmamentando' nillable='true' type='xs:string'/>
+       <xs:element name='tratamentoAnteriorCancerMama' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' name='listaCodigosTipoTratamentoAnteriorCancerMama' type='xs:string'/>
+       <xs:element name='codigoTipoDeteccaoLesao' type='xs:string'/>
+       <xs:element name='codigoTipoDiagnosticoImagem' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoLateralidade' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoLocalizacaoNodulo' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoTamanhoLesao' nillable='true' type='xs:string'/>
+       <xs:element name='linfonodoAxilarPalpavel' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoMaterialEnviadoProcedenteDe' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='requisicaoExameWsdl'>
+    <xs:sequence>
+     <xs:element name='cartaoSUSPaciente' type='xs:string'/>
+     <xs:element minOccurs='0' name='numeroProntuario' nillable='true' type='xs:string'/>
+     <xs:element name='dataColeta' type='xs:string'/>
+     <xs:element name='CPFResponsavelColeta' type='xs:string'/>
+     <xs:element minOccurs='0' name='conselho' nillable='true' type='xs:string'/>
+     <xs:element name='nomePaciente' type='xs:string'/>
+     <xs:element name='nomeMae' type='xs:string'/>
+     <xs:element name='sexo' type='xs:string'/>
+     <xs:element name='dtNascimento' type='xs:string'/>
+     <xs:element name='racaCor' type='xs:string'/>
+     <xs:element name='etnia' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameHistopatologicoMamaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaRequisicaoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='baseRespostaRequisicaoExame'>
+    <xs:complexContent>
+     <xs:extension base='tns:baseResposta'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='protocolo' type='xs:string'/>
+       <xs:element minOccurs='0' name='numCartaoSUSinformado' type='xs:string'/>
+       <xs:element minOccurs='0' name='numCartaoSUSgravado' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='baseResposta'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='codigo' type='xs:long'/>
+     <xs:element minOccurs='0' name='retorno' type='xs:string'/>
+     <xs:element minOccurs='0' name='contemErro' type='xs:boolean'/>
+     <xs:element minOccurs='0' name='mensagens'>
+      <xs:simpleType>
+       <xs:list itemType='xs:string'/>
+      </xs:simpleType>
+     </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='SiscanFault'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='mensagem' type='xs:anyType'/>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoCitopatologicoColoUtero'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='arg1' type='tns:requisicaoExameCitopatologicoColoUteroWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='requisicaoExameCitopatologicoColoUteroWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:requisicaoExameWsdl'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='codTipoMotivoExameCitopatologico' nillable='true' type='xs:string'/>
+       <xs:element name='examePreventivoRealizado' type='xs:string'/>
+       <xs:element minOccurs='0' name='anoExamePreventRealizado' nillable='true' type='xs:string'/>
+       <xs:element name='usaDiu' type='xs:string'/>
+       <xs:element name='estaGravida' type='xs:string'/>
+       <xs:element name='usaPilulaAnticoncepcional' type='xs:string'/>
+       <xs:element name='usaHormonio' type='xs:string'/>
+       <xs:element name='tratamentoRadioterapiaUtilizado' type='xs:string'/>
+       <xs:element minOccurs='0' name='dataUltimaMenstruacao' nillable='true' type='xs:string'/>
+       <xs:element name='sangramentoAposRelacaoSexual' type='xs:string'/>
+       <xs:element name='sangramentoAposMenopausa' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoInspecaoColo' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='sinaisSugestivosDst' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoCitopatologicoColoUteroResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaRequisicaoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameHistopatologicoMama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='resultado' type='tns:resultadoHistopatologicoMamaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='resultadoHistopatologicoMamaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:resultadoExameWsdl'>
+      <xs:sequence>
+       <xs:element name='codigoTipoProcedimentoCirurgico' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoAdequabilidadeMaterial' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='motivoMaterialInsatisfatorio' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoDimensaoMaximaTumorDominante' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoDimensaoMaximaTumorSecundario' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiMicrocalsificacoes' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoLesao' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='motivoCoreBiopsyIndeterminada' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' name='listaCodigosTipocaraterBenigno' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosTiposLesaocaraterBenigno' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoLesaocaraterNeoplasicomaligno' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosTiposLesaocaraterNeoplasicomaligno' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiHistologicoAssociadoSecundario' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='especifiqueOutrosTiposHistologicoAssociadoSecundario' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='multifocalidadeTumor' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='multicentricidadeTumor' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='grauHistologico' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiOutrosAspectosInvasaoVascular' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiOutrosAspectosInfiltracaoPerineural' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiOutrosAspectosEmbolizacaoLinfatica' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiAlteracaoPele' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiTumorMamilo' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiTumorMusculoPeitoral' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiTumorFasciaPeitoral' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='possuiTumorGradilCostal' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoMargemCirurgica' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoLinfonodo' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroLinfonodosAvaliados' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoNumeroLinfonodosComprometidos' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='presencaCoalescenciaLinfonodal' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='extravasamentoCapsulaLinfonodal' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='receptorEstrogeno' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='receptorProgesterona' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosEstudosImunoHistoquimicos' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='especifiqueOutrosEstudosImunoHistoquimicos' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='observacoesExame' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='resultadoExameWsdl'>
+    <xs:sequence>
+     <xs:element name='numeroProtocoloDaRequisicao' nillable='true' type='xs:string'/>
+     <xs:element name='dataRecebimentoRequisicao' type='xs:string'/>
+     <xs:element name='numeroExame' nillable='true' type='xs:string'/>
+     <xs:element name='cpfResponsavelResultado' type='xs:string'/>
+     <xs:element name='dataResultado' type='xs:string'/>
+     <xs:element minOccurs='0' name='conselho' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameHistopatologicoMamaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaResultadoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='baseRespostaResultadoExame'>
+    <xs:complexContent>
+     <xs:extension base='tns:baseResposta'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='protocolo' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameCitopatologicoColoUtero'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='resultado' type='tns:resultadoExameCitopatologicoColoUteroWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='resultadoExameCitopatologicoColoUteroWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:resultadoExameWsdl'>
+      <xs:sequence>
+       <xs:element name='codigoTipoAvaliacaoAmostra' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaCodigoTipoMotivoRejeicaoAmostra' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='causasAlheiasAoLaboratorio' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosMotivosRejeitaAmostra' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaCodigoTipoEpitelioAmostra' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaCodigoTipoMotivoAvaliacaoInsatisfeito' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosMotivosRejeitaAmostraInsatisfeita' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusDentroLimitesNormalidade' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaCodigoTipoMicrobiologia' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosMicrobiologia' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaCodigoTipoAlteracaoCelular' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosAlteracaoCelular' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoCelulaEscamosaSingIndeterminado' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoCelulaGlandularesSigIndeterminado' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoCelulaOrigemIndefinida' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoCelulaAtipiaEscamosa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoTipoCelulaAtipiasGlandulares' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosNeoplasiasMalignas' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusCelulasEndometriaisPresen' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='observacoes' nillable='true' type='xs:string'/>
+       <xs:element name='statusScreeningRealizado' type='xs:string'/>
+       <xs:element minOccurs='0' name='cpfProfissionalResponsavelScreening' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameCitopatologicoColoUteroResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaResultadoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameMamografia'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='requisicao' type='tns:requisicaoMamografiaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='requisicaoMamografiaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:requisicaoExameWsdl'>
+      <xs:sequence>
+       <xs:element name='tipoMamografia' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoMamografiaRastreamento' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='listaTipoLateralidade'>
+        <xs:simpleType>
+         <xs:list itemType='xs:string'/>
+        </xs:simpleType>
+       </xs:element>
+       <xs:element name='lateralidadeRadioterapia' type='xs:string'/>
+       <xs:element name='lateralidadeMamaRadiografada' type='xs:string'/>
+       <xs:element name='lateralidadeQuimioterapiaNeoadjuvante' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadosExame' nillable='true' type='tns:achadosExameWsdl'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaFezCirurgiaMama' nillable='true' type='tns:fezCirurgiaMamaWsdl'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaDiagnostico' nillable='true' type='tns:diagnosticoWsdl'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaDiagnosticoRevisaoMamografia' nillable='true' type='tns:diagnosticoRevisaoMamografiaWsdl'/>
+       <xs:element name='apresentaRiscoElevadoCancer' type='xs:string'/>
+       <xs:element name='mamaAnteriormenteExaminada' type='xs:string'/>
+       <xs:element name='fezMamografiaAlgumaVez' type='xs:string'/>
+       <xs:element minOccurs='0' name='anoUltimaMamografia' nillable='true' type='xs:string'/>
+       <xs:element name='fezRadioterapiaMamaPlastrao' type='xs:string'/>
+       <xs:element minOccurs='0' name='anoRadioterapiaEsquerda' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='anoRadioterapiaDireita' nillable='true' type='xs:string'/>
+       <xs:element name='fezCirurgiaMama' type='xs:string'/>
+       <xs:element minOccurs='0' name='achadosExameClinicoEsquerda' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='achadosExameClinicoDireita' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='achadosExameWsdl'>
+    <xs:sequence>
+     <xs:element name='codAchadTipoLateralidade' type='xs:string'/>
+     <xs:element name='codTipoDescargaPapilar' type='xs:string'/>
+     <xs:element minOccurs='0' name='listaAchadExameTpLinfonodoPalpavel'>
+      <xs:simpleType>
+       <xs:list itemType='xs:string'/>
+      </xs:simpleType>
+     </xs:element>
+     <xs:element minOccurs='0' name='listaAchadExameTpLocaEspessamento'>
+      <xs:simpleType>
+       <xs:list itemType='xs:string'/>
+      </xs:simpleType>
+     </xs:element>
+     <xs:element minOccurs='0' name='listaAchadExameTpLocaNodulo'>
+      <xs:simpleType>
+       <xs:list itemType='xs:string'/>
+      </xs:simpleType>
+     </xs:element>
+     <xs:element minOccurs='0' name='lesaoPapilar' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fezCirurgiaMamaWsdl'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='codFezCirTipoLateralidade' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoBiopsiaCirurgicaIncisional' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoBiopsiaCirurgicaExcisional' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoSegmentectomia' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoCentralectomia' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoDutectomia' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoMastectomia' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoMastectomiaPoupadoraPele' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoMastecPoupPeleComArePapilar' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoLinfaDenectomiaAxilar' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoBiopsiaLinfonodoSentinela' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoReconstrucaoMamaria' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoMastoplastiaRedutora' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='anoInclusaoImplantes' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='diagnosticoWsdl'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='codDiagTipoLateralidade' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='codTipoDiagnostico' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='nodulo' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='microcalcificacoes' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='assimetriaFocal' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='assimetriaDifusa' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='areaDensa' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='distorcaoFocal' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='linfonodoAxilar' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='diagnosticoRevisaoMamografiaWsdl'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='codDiagRevTipoLateralidade' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='categoria0' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='categoria3' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='categoria4' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='categoria5' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameMamografiaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaRequisicaoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameHistopatologicoColoUtero'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='requisicao' type='tns:requisicaoExameHistopatologicoColoUteroWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='requisicaoExameHistopatologicoColoUteroWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:requisicaoExameWsdl'>
+      <xs:sequence>
+       <xs:element name='codTipoEncaminhamento' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipiaSignificadoIndeterminadoEscamosa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipiaSignificadoIndeterminadoGlandul' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipiaSignificadoIndeterminadoIndeterminado' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipiaEscamosa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipiaGlanular' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoAchadoColposcopio' type='xs:string'/>
+       <xs:element name='codTipoZonaTranferenciaAdequabil' type='xs:string'/>
+       <xs:element name='codTipoProcedimento' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoOutrosDiagnosticosCito' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codOutrasNeoPlasiasMalignas' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoProcedimentoOutras' nillable='true' type='xs:string'/>
+       <xs:element name='descricaoInformacaoPatologista' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoAchadoColposcopioAnormal' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='satisfatoriaEctoEndocervical' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='insatisfatoria' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='exereseZonaTransformacao' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameHistopatologicoColoUteroResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaRequisicaoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameCitopatologicoMama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='requisicao' type='tns:requisicaoCitopatologicoMamaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='requisicaoCitopatologicoMamaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:requisicaoExameWsdl'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='tipoNoduloCaroco' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoEstaGravida' nillable='true' type='xs:string'/>
+       <xs:element name='tipoApresentaRiscoCancer' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoDescargaPapilar' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoNoduloTumor' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoLocalizacaoNodulo' nillable='true' type='xs:string'/>
+       <xs:element name='tipoLateralidade' type='xs:string'/>
+       <xs:element name='tipoMaterial' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoTemTumorResidualPosPuncao' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoTumorSolidoResidual' nillable='true' type='xs:string'/>
+       <xs:element name='numeroLaminas' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaTipoLateralidade' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarRequisicaoExameCitopatologicoMamaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaRequisicaoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameCitopatologicoMama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='resultado' type='tns:resultadoCitopatologicoMama'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='resultadoCitopatologicoMama'>
+    <xs:complexContent>
+     <xs:extension base='tns:resultadoExameWsdl'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='tipoLateralidade' nillable='true' type='xs:string'/>
+       <xs:element name='numeroLaminas' type='xs:string'/>
+       <xs:element name='tipoAdequabilidadeMaterial' type='xs:string'/>
+       <xs:element minOccurs='0' name='motivoInsatisfatorio' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoPuncaoAspirativa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoProcedimentoBenignosNegativosMalignidade' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosProcedimentosBenignoNegativo' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoPadraoCitoMalignoIndeterminado' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosPadroesCitoMalignoIndeterminado' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoPadraoCitoSuspeitoMaligno' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosPadroesCitoSuspeitos' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoPadraoCitoPositivoMaligno' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='outrosPadroesCitoPositivos' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoPadraoCitoAmostra' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='observacoes' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameCitopatologicoMamaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaResultadoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameMamografia'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='resultado' type='tns:resultadoExameMamografia'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='resultadoExameMamografia'>
+    <xs:complexContent>
+     <xs:extension base='tns:resultadoExameWsdl'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='codTipoHistoricoMenstrual' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='dataUltimaMestruacao' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroTempoMenopausa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusUsaRemedioTratarMenopausa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusEstaGravida' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroFilmes' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusMamaDireitaRadiografada' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusMamaEsquerdaRadiografada' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoObservacoes' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicos' type='tns:achadoRadiologico'/>
+       <xs:element minOccurs='0' name='codigoCategoriaBiradsDireita' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoCategoriaBiradsEsquerda' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoRecomendacoesDireira' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codigoRecomendacoesEsquerda' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='achadoRadiologico'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='codTipoLateralidade' nillable='true' type='xs:string'/>
+     <xs:element name='codTipoMamaPele' type='xs:string'/>
+     <xs:element name='codTipoMama' type='xs:string'/>
+     <xs:element name='codTipoLinfonodoAxilar' type='xs:string'/>
+     <xs:element minOccurs='0' name='statusDilatacaoDuctalIsolada' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='descricaoAchadoBenignosOutro' nillable='true' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoMicrocalcificacao' type='tns:achadoRadiologicoMicrocalcificacao'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicoNodulo' type='tns:achadoRadiologicoNodulo'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoTipoAlteracaoPele' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoTipoOpcaoLinfAxila' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoTipoAchadoBenigno' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicoDistorcaoFocal' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoTipoAssimetriaDensa' type='tns:achadoRadiologicoAssimetriaDensa'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoTipoAssimetriaDifusa' type='tns:achadoRadiologicoAssimetriaDifusa'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoTipoAssimetriaFocal' type='tns:achadoRadiologicoAssimetriaFocal'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='achadoRadiologicoMicrocalcificacao'>
+    <xs:sequence>
+     <xs:element name='codTipoMicrocalcificacaoForma' type='xs:string'/>
+     <xs:element name='codTipoMicrocalcificacaoDistribuido' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicoMicrocalcificacaoLocalizacaoMama' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='achadoRadiologicoNodulo'>
+    <xs:sequence>
+     <xs:element name='codTipoLocalizacaoNodulo' type='xs:string'/>
+     <xs:element name='codTipoNoduloContorno' type='xs:string'/>
+     <xs:element name='codTipoNoduloLimite' type='xs:string'/>
+     <xs:element name='numeroTamanhoNodulo' type='xs:string'/>
+     <xs:element minOccurs='0' name='codTipoUltrassonografia' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='achadoRadiologicoAssimetriaDensa'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicoLocalizacaoMama' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='achadoRadiologicoAssimetriaDifusa'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicoLocalizacaoMama' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='achadoRadiologicoAssimetriaFocal'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadoRadiologicoLocalizacaoMama' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameMamografiaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaResultadoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='liberarLaudo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='laudo' type='tns:liberarLaudoWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='liberarLaudoWsdl'>
+    <xs:sequence>
+     <xs:element name='cartaoSUSPaciente' type='xs:string'/>
+     <xs:element name='cpfResponsavelLaudo' nillable='true' type='xs:string'/>
+     <xs:element name='dataColeta' nillable='true' type='xs:string'/>
+     <xs:element name='tipoExame' nillable='true' type='xs:string'/>
+     <xs:element name='numeroProtocoloDaRequisicao' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='tipoLateralidade' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='liberarLaudoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseResposta'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameHistopatologicoColoUtero'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='identificacao' type='tns:identificacao'/>
+     <xs:element minOccurs='0' name='resultado' type='tns:resultadoExameHistopatologicoColoUteroWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='resultadoExameHistopatologicoColoUteroWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:resultadoExameWsdl'>
+      <xs:sequence>
+       <xs:element name='codTipoProcedimento' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoProcedimentoCirurgico' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='macroscopia' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoMaterialRecebido' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroFragmentos' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroTamanhoTumor' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroDistanciaMargemMaisProx' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' name='listaCodResultadoHistoColoUteroLocalizacaoTumor' type='xs:string'/>
+       <xs:element name='codTipoAdequabilidadeMaterial' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoAdequabilMaterialInsatisfatorio' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaCodResultadoHistoColoUteroLesaoCaraterBenigno' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoLesaoCaraterNeoplasicoPreneoplasico' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoLesaoCaraterNeoplasicoPreneoplasicoAdenoca' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoOutrasNeoplasiasMalignas' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoGrauDiferenciacao' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroProfundidadeInvasao' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusRelacaoTumorInfiltraVascular' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusRelacaoTumorInfiltraPerineural' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusRelacaoTumorInfiltraParametrial' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusRelacaoTumorInfiltraCorpoUterino' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='statusRelacaoTumorInfiltraVagina' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroLinfonodosRegionaisExamin' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroLinfonodosRegionaisCompro' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoMargemCirurgica' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoDiagnosticoDescritivo' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroControleHistopatologicoFragmento' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='numeroControleHistopatologicoBloco' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='salvarResultadoExameHistopatologicoColoUteroResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:baseRespostaResultadoExame'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameCitopatologicoMama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='requisicao' type='tns:consultaRequisicaoExameWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultaRequisicaoExameWsdl'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='numeroProtocolo' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='coUfIbge' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='codigoMunicipioIbge' nillable='true' type='xs:string'/>
+     <xs:element name='cartaoSUSPaciente' type='xs:string'/>
+     <xs:element name='cartaoSUSUsuarioAutenticado' type='xs:string'/>
+     <xs:element name='cnesUnidadeSaude' type='xs:string'/>
+     <xs:element name='cnesPrestador' type='xs:string'/>
+     <xs:element minOccurs='0' name='dataInicialRequisicao' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='dataFinalRequisicao' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameCitopatologicoMamaResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:respostaCitopatologicoMamaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='respostaCitopatologicoMamaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:cabecalhoRequisicao'>
+      <xs:sequence>
+       <xs:element name='achouNoduloCarocoRecente' nillable='true' type='xs:string'/>
+       <xs:element name='tipoEstaGravida' nillable='true' type='xs:string'/>
+       <xs:element name='tipoApresentaRiscoCancer' type='xs:string'/>
+       <xs:element name='tipoDescargaPapilar' nillable='true' type='xs:string'/>
+       <xs:element name='tipoNoduloTumor' nillable='true' type='xs:string'/>
+       <xs:element name='tipoLocalizacaoNodulo' nillable='true' type='xs:string'/>
+       <xs:element name='tipoLateralidade' nillable='true' type='xs:string'/>
+       <xs:element name='tipoMaterial' nillable='true' type='xs:string'/>
+       <xs:element name='tipoTemTumorResidualPosPuncao' nillable='true' type='xs:string'/>
+       <xs:element name='tipoTumorSolidoResidual' nillable='true' type='xs:string'/>
+       <xs:element name='numeroLaminas' type='xs:long'/>
+       <xs:element name='dataColeta' nillable='true' type='xs:string'/>
+       <xs:element name='responsavel' nillable='true' type='xs:string'/>
+       <xs:element name='conselho' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='cabecalhoRequisicao'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='cartaoSusPaciente' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomePaciente' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='sexoPaciente' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='cnesPrestador' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomePrestador' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='cnesUnidadeSaude' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomeUnidadeSaude' nillable='true' type='xs:string'/>
+     <xs:element minOccurs='0' name='numeroProtocolo' nillable='true' type='xs:decimal'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='respostaHistopatologicoMamaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:cabecalhoRequisicao'>
+      <xs:sequence>
+       <xs:element name='codigoTipoExameHistopatologico' nillable='true' type='xs:string'/>
+       <xs:element name='apresentaRiscoElevadoCancerMama' nillable='true' type='xs:string'/>
+       <xs:element name='riscoElevadoSao' nillable='true' type='xs:string'/>
+       <xs:element name='estaGravidaAmamentando' nillable='true' type='xs:string'/>
+       <xs:element name='tratamentoAnteriorCancerMama' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' name='listaTipoTratamento' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoDeteccaoLesao' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoDiagnosticoImagem' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoLateralidade' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoLocalizacaoNodulo' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoTamanhoLesao' nillable='true' type='xs:string'/>
+       <xs:element name='linfonodoAxilarPalpavel' nillable='true' type='xs:string'/>
+       <xs:element name='codigoTipoMaterialEnviadoProcedenteDe' nillable='true' type='xs:string'/>
+       <xs:element name='responsavel' nillable='true' type='xs:string'/>
+       <xs:element name='dataColeta' nillable='true' type='xs:string'/>
+       <xs:element name='conselho' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='respostaHistopatologicoColoUteroWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:cabecalhoRequisicao'>
+      <xs:sequence>
+       <xs:element name='codTipoEncaminhamento' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoCelulaAtipicaSignificadoIndeterminadoEscamosa' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoCelulaAtipicaSignificadoIndeterminadoGlandulares' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipicaSignificadoIndeterminadoIndefinida' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipicaEscamosa' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='codTipoCelulaAtipicaGlandular' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoOutrosDiagnosticosCito' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoAchadoColposcopico' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='tipoAchadoColposcopicoAnormal' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoZonaTranferenciaAdequabilidade' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='satisfatoriaEctoEndocervical' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='insatisfatoria' nillable='true' type='xs:string'/>
+       <xs:element name='codTipoProcedimento' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='exereseZonaTransformacao' nillable='true' type='xs:string'/>
+       <xs:element minOccurs='0' name='descricaoProcedimentoOutras' nillable='true' type='xs:string'/>
+       <xs:element name='descricaoInformacaoPatologista' nillable='true' type='xs:string'/>
+       <xs:element name='dataColeta' nillable='true' type='xs:string'/>
+       <xs:element name='responsavel' nillable='true' type='xs:string'/>
+       <xs:element name='conselho' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='respostaCitopatologicoColoUteroWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:cabecalhoRequisicao'>
+      <xs:sequence>
+       <xs:element name='codTipoMotivoExameCitopatologico' nillable='true' type='xs:string'/>
+       <xs:element name='examePreventivoRealizado' type='xs:string'/>
+       <xs:element name='anoExamePreventivoRealizado' nillable='true' type='xs:int'/>
+       <xs:element name='diuUtilizado' type='xs:string'/>
+       <xs:element name='estaGravida' type='xs:string'/>
+       <xs:element name='usaPilulaAnticoncepcional' type='xs:string'/>
+       <xs:element name='usaHormonio' type='xs:string'/>
+       <xs:element name='tratamentoRadioterapiaUtilizado' type='xs:string'/>
+       <xs:element name='dataUltimaMestruacao' nillable='true' type='xs:string'/>
+       <xs:element name='sangramentoAposRelacaoSexual' type='xs:string'/>
+       <xs:element name='sangramentoAposMenopausa' type='xs:string'/>
+       <xs:element name='codTipoInspecaoColo' nillable='true' type='xs:string'/>
+       <xs:element name='sinaisSugestivosDst' nillable='true' type='xs:string'/>
+       <xs:element name='responsavel' nillable='true' type='xs:string'/>
+       <xs:element name='dataColeta' nillable='true' type='xs:string'/>
+       <xs:element name='conselho' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='respostaMamografiaWsdl'>
+    <xs:complexContent>
+     <xs:extension base='tns:cabecalhoRequisicao'>
+      <xs:sequence>
+       <xs:element name='tipoNoduloCaroco' nillable='true' type='xs:string'/>
+       <xs:element name='apresentaRiscoElevadoCancer' nillable='true' type='xs:string'/>
+       <xs:element name='mamaAnteriormenteExaminada' nillable='true' type='xs:string'/>
+       <xs:element name='fezMamografiaAlgumaVez' nillable='true' type='xs:string'/>
+       <xs:element name='anoUltimaMamografia' nillable='true' type='xs:int'/>
+       <xs:element name='fezRadioterapiaMamaPlastrao' nillable='true' type='xs:string'/>
+       <xs:element name='lateralidadeRadioterapia' nillable='true' type='xs:string'/>
+       <xs:element name='anoRadioterapiaEsquerda' nillable='true' type='xs:int'/>
+       <xs:element name='anoRadioterapiaDireita' nillable='true' type='xs:int'/>
+       <xs:element name='fezCirurgiaMama' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaFezCirurgiaMama' nillable='true' type='tns:fezCirurgiaMamaWsdl'/>
+       <xs:element name='tipoMamografia' nillable='true' type='xs:string'/>
+       <xs:element name='lateralidadeMamaRadiografada' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaAchadosExame' nillable='true' type='tns:achadosExameWsdl'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaDiagnostico' nillable='true' type='tns:diagnosticoWsdl'/>
+       <xs:element name='lateralidadeQuimioterapiaNeoadjuvante' nillable='true' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listaDiagnosticoRevisaoMamografia' nillable='true' type='tns:diagnosticoRevisaoMamografiaWsdl'/>
+       <xs:element name='tipoMamografiaRastreamento' nillable='true' type='xs:string'/>
+       <xs:element name='dataSolicitacao' nillable='true' type='xs:string'/>
+       <xs:element name='responsavel' nillable='true' type='xs:string'/>
+       <xs:element name='conselho' nillable='true' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameHistopatologicoMama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='requisicao' type='tns:consultaRequisicaoExameWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameHistopatologicoMamaResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:respostaHistopatologicoMamaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameMamografia'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='requisicao' type='tns:consultaRequisicaoExameWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameMamografiaResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:respostaMamografiaWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameCitopatologicoColoUtero'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='requisicao' type='tns:consultaRequisicaoExameWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameCitopatologicoColoUteroResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:respostaCitopatologicoColoUteroWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameHistopatologicoColo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='requisicao' type='tns:consultaRequisicaoExameWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='consultarRequisicaoExameHistopatologicoColoResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:respostaHistopatologicoColoUteroWsdl'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='SiscanWS_salvarRequisicaoExameHistopatologicoColoUtero'>
+  <part element='tns:salvarRequisicaoExameHistopatologicoColoUtero' name='salvarRequisicaoExameHistopatologicoColoUtero'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameCitopatologicoColoUtero'>
+  <part element='tns:salvarResultadoExameCitopatologicoColoUtero' name='salvarResultadoExameCitopatologicoColoUtero'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameMamografia'>
+  <part element='tns:consultarRequisicaoExameMamografia' name='consultarRequisicaoExameMamografia'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameMamografia'>
+  <part element='tns:salvarRequisicaoExameMamografia' name='salvarRequisicaoExameMamografia'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameCitopatologicoMama'>
+  <part element='tns:salvarResultadoExameCitopatologicoMama' name='salvarResultadoExameCitopatologicoMama'></part>
+ </message>
+ <message name='SiscanFault'>
+  <part element='tns:SiscanFault' name='SiscanFault'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameCitopatologicoColoUteroResponse'>
+  <part element='tns:consultarRequisicaoExameCitopatologicoColoUteroResponse' name='consultarRequisicaoExameCitopatologicoColoUteroResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameMamografiaResponse'>
+  <part element='tns:salvarRequisicaoExameMamografiaResponse' name='salvarRequisicaoExameMamografiaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameHistopatologicoColoUteroResponse'>
+  <part element='tns:salvarResultadoExameHistopatologicoColoUteroResponse' name='salvarResultadoExameHistopatologicoColoUteroResponse'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameHistopatologicoColoResponse'>
+  <part element='tns:consultarRequisicaoExameHistopatologicoColoResponse' name='consultarRequisicaoExameHistopatologicoColoResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameHistopatologicoMamaResponse'>
+  <part element='tns:salvarResultadoExameHistopatologicoMamaResponse' name='salvarResultadoExameHistopatologicoMamaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameHistopatologicoMama'>
+  <part element='tns:salvarRequisicaoExameHistopatologicoMama' name='salvarRequisicaoExameHistopatologicoMama'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameMamografiaResponse'>
+  <part element='tns:salvarResultadoExameMamografiaResponse' name='salvarResultadoExameMamografiaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameCitopatologicoMamaResponse'>
+  <part element='tns:salvarRequisicaoExameCitopatologicoMamaResponse' name='salvarRequisicaoExameCitopatologicoMamaResponse'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameHistopatologicoMama'>
+  <part element='tns:consultarRequisicaoExameHistopatologicoMama' name='consultarRequisicaoExameHistopatologicoMama'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameCitopatologicoMamaResponse'>
+  <part element='tns:salvarResultadoExameCitopatologicoMamaResponse' name='salvarResultadoExameCitopatologicoMamaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameCitopatologicoMama'>
+  <part element='tns:salvarRequisicaoExameCitopatologicoMama' name='salvarRequisicaoExameCitopatologicoMama'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameCitopatologicoColoUteroResponse'>
+  <part element='tns:salvarResultadoExameCitopatologicoColoUteroResponse' name='salvarResultadoExameCitopatologicoColoUteroResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameHistopatologicoColoUteroResponse'>
+  <part element='tns:salvarRequisicaoExameHistopatologicoColoUteroResponse' name='salvarRequisicaoExameHistopatologicoColoUteroResponse'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameCitopatologicoColoUtero'>
+  <part element='tns:consultarRequisicaoExameCitopatologicoColoUtero' name='consultarRequisicaoExameCitopatologicoColoUtero'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameMamografiaResponse'>
+  <part element='tns:consultarRequisicaoExameMamografiaResponse' name='consultarRequisicaoExameMamografiaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameHistopatologicoMama'>
+  <part element='tns:salvarResultadoExameHistopatologicoMama' name='salvarResultadoExameHistopatologicoMama'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoCitopatologicoColoUteroResponse'>
+  <part element='tns:salvarRequisicaoCitopatologicoColoUteroResponse' name='salvarRequisicaoCitopatologicoColoUteroResponse'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameCitopatologicoMamaResponse'>
+  <part element='tns:consultarRequisicaoExameCitopatologicoMamaResponse' name='consultarRequisicaoExameCitopatologicoMamaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameMamografia'>
+  <part element='tns:salvarResultadoExameMamografia' name='salvarResultadoExameMamografia'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameHistopatologicoMamaResponse'>
+  <part element='tns:consultarRequisicaoExameHistopatologicoMamaResponse' name='consultarRequisicaoExameHistopatologicoMamaResponse'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameCitopatologicoMama'>
+  <part element='tns:consultarRequisicaoExameCitopatologicoMama' name='consultarRequisicaoExameCitopatologicoMama'></part>
+ </message>
+ <message name='SiscanWS_liberarLaudo'>
+  <part element='tns:liberarLaudo' name='liberarLaudo'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoExameHistopatologicoMamaResponse'>
+  <part element='tns:salvarRequisicaoExameHistopatologicoMamaResponse' name='salvarRequisicaoExameHistopatologicoMamaResponse'></part>
+ </message>
+ <message name='SiscanWS_salvarRequisicaoCitopatologicoColoUtero'>
+  <part element='tns:salvarRequisicaoCitopatologicoColoUtero' name='salvarRequisicaoCitopatologicoColoUtero'></part>
+ </message>
+ <message name='SiscanWS_consultarRequisicaoExameHistopatologicoColo'>
+  <part element='tns:consultarRequisicaoExameHistopatologicoColo' name='consultarRequisicaoExameHistopatologicoColo'></part>
+ </message>
+ <message name='SiscanWS_salvarResultadoExameHistopatologicoColoUtero'>
+  <part element='tns:salvarResultadoExameHistopatologicoColoUtero' name='salvarResultadoExameHistopatologicoColoUtero'></part>
+ </message>
+ <message name='SiscanWS_liberarLaudoResponse'>
+  <part element='tns:liberarLaudoResponse' name='liberarLaudoResponse'></part>
+ </message>
+ <portType name='SiscanWS'>
+  <operation name='consultarRequisicaoExameCitopatologicoColoUtero' parameterOrder='consultarRequisicaoExameCitopatologicoColoUtero'>
+   <input message='tns:SiscanWS_consultarRequisicaoExameCitopatologicoColoUtero'></input>
+   <output message='tns:SiscanWS_consultarRequisicaoExameCitopatologicoColoUteroResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='consultarRequisicaoExameCitopatologicoMama' parameterOrder='consultarRequisicaoExameCitopatologicoMama'>
+   <input message='tns:SiscanWS_consultarRequisicaoExameCitopatologicoMama'></input>
+   <output message='tns:SiscanWS_consultarRequisicaoExameCitopatologicoMamaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='consultarRequisicaoExameHistopatologicoColo' parameterOrder='consultarRequisicaoExameHistopatologicoColo'>
+   <input message='tns:SiscanWS_consultarRequisicaoExameHistopatologicoColo'></input>
+   <output message='tns:SiscanWS_consultarRequisicaoExameHistopatologicoColoResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='consultarRequisicaoExameHistopatologicoMama' parameterOrder='consultarRequisicaoExameHistopatologicoMama'>
+   <input message='tns:SiscanWS_consultarRequisicaoExameHistopatologicoMama'></input>
+   <output message='tns:SiscanWS_consultarRequisicaoExameHistopatologicoMamaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='consultarRequisicaoExameMamografia' parameterOrder='consultarRequisicaoExameMamografia'>
+   <input message='tns:SiscanWS_consultarRequisicaoExameMamografia'></input>
+   <output message='tns:SiscanWS_consultarRequisicaoExameMamografiaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='liberarLaudo' parameterOrder='liberarLaudo'>
+   <input message='tns:SiscanWS_liberarLaudo'></input>
+   <output message='tns:SiscanWS_liberarLaudoResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarRequisicaoCitopatologicoColoUtero' parameterOrder='salvarRequisicaoCitopatologicoColoUtero'>
+   <input message='tns:SiscanWS_salvarRequisicaoCitopatologicoColoUtero'></input>
+   <output message='tns:SiscanWS_salvarRequisicaoCitopatologicoColoUteroResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarRequisicaoExameCitopatologicoMama' parameterOrder='salvarRequisicaoExameCitopatologicoMama'>
+   <input message='tns:SiscanWS_salvarRequisicaoExameCitopatologicoMama'></input>
+   <output message='tns:SiscanWS_salvarRequisicaoExameCitopatologicoMamaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarRequisicaoExameHistopatologicoColoUtero' parameterOrder='salvarRequisicaoExameHistopatologicoColoUtero'>
+   <input message='tns:SiscanWS_salvarRequisicaoExameHistopatologicoColoUtero'></input>
+   <output message='tns:SiscanWS_salvarRequisicaoExameHistopatologicoColoUteroResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarRequisicaoExameHistopatologicoMama' parameterOrder='salvarRequisicaoExameHistopatologicoMama'>
+   <input message='tns:SiscanWS_salvarRequisicaoExameHistopatologicoMama'></input>
+   <output message='tns:SiscanWS_salvarRequisicaoExameHistopatologicoMamaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarRequisicaoExameMamografia' parameterOrder='salvarRequisicaoExameMamografia'>
+   <input message='tns:SiscanWS_salvarRequisicaoExameMamografia'></input>
+   <output message='tns:SiscanWS_salvarRequisicaoExameMamografiaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarResultadoExameCitopatologicoColoUtero' parameterOrder='salvarResultadoExameCitopatologicoColoUtero'>
+   <input message='tns:SiscanWS_salvarResultadoExameCitopatologicoColoUtero'></input>
+   <output message='tns:SiscanWS_salvarResultadoExameCitopatologicoColoUteroResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarResultadoExameCitopatologicoMama' parameterOrder='salvarResultadoExameCitopatologicoMama'>
+   <input message='tns:SiscanWS_salvarResultadoExameCitopatologicoMama'></input>
+   <output message='tns:SiscanWS_salvarResultadoExameCitopatologicoMamaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarResultadoExameHistopatologicoColoUtero' parameterOrder='salvarResultadoExameHistopatologicoColoUtero'>
+   <input message='tns:SiscanWS_salvarResultadoExameHistopatologicoColoUtero'></input>
+   <output message='tns:SiscanWS_salvarResultadoExameHistopatologicoColoUteroResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarResultadoExameHistopatologicoMama' parameterOrder='salvarResultadoExameHistopatologicoMama'>
+   <input message='tns:SiscanWS_salvarResultadoExameHistopatologicoMama'></input>
+   <output message='tns:SiscanWS_salvarResultadoExameHistopatologicoMamaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+  <operation name='salvarResultadoExameMamografia' parameterOrder='salvarResultadoExameMamografia'>
+   <input message='tns:SiscanWS_salvarResultadoExameMamografia'></input>
+   <output message='tns:SiscanWS_salvarResultadoExameMamografiaResponse'></output>
+   <fault message='tns:SiscanFault' name='SiscanFault'></fault>
+  </operation>
+ </portType>
+ <binding name='SiscanWSBinding' type='tns:SiscanWS'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='consultarRequisicaoExameCitopatologicoColoUtero'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='consultarRequisicaoExameCitopatologicoMama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='consultarRequisicaoExameHistopatologicoColo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='consultarRequisicaoExameHistopatologicoMama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='consultarRequisicaoExameMamografia'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='liberarLaudo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarRequisicaoCitopatologicoColoUtero'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarRequisicaoExameCitopatologicoMama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarRequisicaoExameHistopatologicoColoUtero'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarRequisicaoExameHistopatologicoMama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarRequisicaoExameMamografia'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarResultadoExameCitopatologicoColoUtero'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarResultadoExameCitopatologicoMama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarResultadoExameHistopatologicoColoUtero'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarResultadoExameHistopatologicoMama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='salvarResultadoExameMamografia'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SiscanFault'>
+    <soap:fault name='SiscanFault' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='SiscanWS'>
+  <port binding='tns:SiscanWSBinding' name='SiscanWSPort'>
+   <soap:address location='http://aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS'/>
+  </port>
+ </service>
+</definitions>

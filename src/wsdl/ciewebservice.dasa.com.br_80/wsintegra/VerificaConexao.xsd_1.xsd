@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1 (branches/2.1-6728; 2011-02-03T14:14:58+0000) JAXWS-RI/2.2.3 JAXWS/2.2. --><xs:schema xmlns:tns="http://conexao.wservice.dasa.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://conexao.wservice.dasa.com.br/">
+
+<xs:element name="conexaoOracle" type="tns:conexaoOracle" />
+
+<xs:element name="conexaoOracleResponse" type="tns:conexaoOracleResponse" />
+
+<xs:complexType name="conexaoOracle">
+<xs:sequence>
+<xs:element name="strDbName" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conexaoOracleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
