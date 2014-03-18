@@ -4,7 +4,7 @@
 
   <groupId>br.com.dasa</groupId>
   <artifactId>wsintegraClientAPI</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <packaging>jar</packaging>
 
   <name>wsintegraClientAPI</name>
@@ -59,6 +59,21 @@
                             <staleFile>${project.build.directory}/jaxws/stale/WsCie.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-WsCie</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>emendaContratoService11.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <wsdlLocation>file:/D:/DASA/SQDASA%20-%20Alvaro/emendaContratoService11.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/emendaContratoService11.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-emendaContratoService11</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://sq.dasa.com.br/ws/schemas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sq.dasa.com.br/ws/definitions" targetNamespace="http://sq.dasa.com.br/ws/definitions">
+    <wsdl:types>
+        <xs:schema xmlns:sq="http://sq.dasa.com.br/ws/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://sq.dasa.com.br/ws/schemas">
+            <xs:element name="CriarEmendaContratoRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="autor">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element minOccurs="1" name="cpf" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="descricao" type="xs:string"/>
+                        <xs:element minOccurs="1" name="origemEmenda">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element minOccurs="0" name="nome" type="xs:string"/>
+                                    <xs:element minOccurs="0" name="id" type="xs:int"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="1" name="tipoEmenda">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="RECONVOCACAO"/>
+                                    <xs:enumeration value="RECOLETA"/>
+                                    <xs:enumeration value="REMARCACAO"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="1" name="fato" type="sq:Fato"/>
+                        <xs:element minOccurs="0" name="clienteApoio">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element minOccurs="1" name="idExterno" type="xs:int"/>
+                                    <xs:element minOccurs="0" name="nome" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="local">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element minOccurs="0" name="nome" type="xs:string"/>
+                                    <xs:element minOccurs="0" name="id" type="xs:int"/>
+                                    <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="exames">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" minOccurs="0" name="exame" type="sq:Exame"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="1" name="dataEntregaLaudo" type="xs:date"/>
+                        <xs:element minOccurs="1" name="protocolo" type="xs:string"/>
+                        <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+                        <xs:element minOccurs="0" name="cip" type="xs:string"/>
+                        <xs:element minOccurs="0" name="convenioMedico" type="xs:string"/>
+                        <xs:element minOccurs="1" name="nomePaciente" type="xs:string"/>
+                        <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+                        <xs:element minOccurs="0" name="email" type="xs:string"/>
+                        <xs:element minOccurs="0" name="endereco" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nomeContatoSecundario" type="xs:string"/>
+                        <xs:element minOccurs="0" name="dataNascimento" type="xs:date"/>
+                        <xs:element minOccurs="0" name="nomeMedico" type="xs:string"/>
+                        <xs:element minOccurs="0" name="telefoneMedico" type="xs:string"/>
+                        <xs:element minOccurs="0" name="emailMedico" type="xs:string"/>
+                        <xs:element name="encerrado" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CriarEmendaContratoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:long"/>
+                        <xs:element name="codigo" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="Exame">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nome" type="xs:string"/>
+                    <xs:element minOccurs="0" name="id" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Fato">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nomeNivel1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nomeNivel2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nomeNivel3" type="xs:string"/>
+                    <xs:element minOccurs="0" name="id" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="CriarEmendaContratoRequest">
+        <wsdl:part element="sch:CriarEmendaContratoRequest" name="CriarEmendaContratoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CriarEmendaContratoResponse">
+        <wsdl:part element="sch:CriarEmendaContratoResponse" name="CriarEmendaContratoResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="EmendaContratoService">
+        <wsdl:operation name="CriarEmendaContrato">
+            <wsdl:input message="tns:CriarEmendaContratoRequest" name="CriarEmendaContratoRequest"/>
+            <wsdl:output message="tns:CriarEmendaContratoResponse" name="CriarEmendaContratoResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="EmendaContratoServiceSoap11" type="tns:EmendaContratoService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="CriarEmendaContrato">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="CriarEmendaContratoRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="CriarEmendaContratoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="EmendaContratoServiceService">
+        <wsdl:port binding="tns:EmendaContratoServiceSoap11" name="EmendaContratoServiceSoap11">
+            <soap:address location="http://127.0.0.1:7001/sqdasa/ws/emendaContrato/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
