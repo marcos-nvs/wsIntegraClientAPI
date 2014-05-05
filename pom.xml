@@ -4,7 +4,7 @@
 
   <groupId>br.com.dasa</groupId>
   <artifactId>wsintegraClientAPI</artifactId>
-  <version>0.0.6</version>
+  <version>0.0.7</version>
   <packaging>jar</packaging>
 
   <name>wsintegraClientAPI</name>
@@ -16,21 +16,6 @@
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.3</version>
                 <executions>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>lab.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName></packageName>
-                            <wsdlLocation>file:/D:/Cientificalab/Divinópolis/lab.wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/lab.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-lab</id>
-                        <phase>generate-sources</phase>
-                    </execution>
                     <execution>
                         <goals>
                             <goal>wsimport</goal>
@@ -59,6 +44,21 @@
                             <staleFile>${project.build.directory}/jaxws/stale/WsCie.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-WsCie</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>hdi.hepic.com.br_8080/HepicWS/api/lab.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <wsdlLocation>http://hdi.hepic.com.br:8080/HepicWS/api/lab?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/lab.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-lab</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>
