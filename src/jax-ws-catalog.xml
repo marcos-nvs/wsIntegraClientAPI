@@ -9,5 +9,4 @@
     <system systemId="file:/D:/DASA/SQDASA%20-%20Alvaro/emendaContratoService11.wsdl" uri="wsdl/emendaContratoService11.wsdl"/>
     <system systemId="http://sqdasahomolog.dasa.com.br/sqdasa/ws/emendaContrato/emendaContratoService.wsdl?wsdl" uri="wsdl/sqdasahomolog.dasa.com.br/sqdasa/ws/emendaContrato/emendaContratoService.wsdl.wsdl"/>
     <system systemId="http://hdi.hepic.com.br:8080/HepicWS/api/lab?wsdl" uri="wsdl/hdi.hepic.com.br_8080/HepicWS/api/lab.wsdl"/>
-    <system systemId="http://webtec.salux.com.br/SxServices/SADT.svc?wsdl" uri="wsdl/webtec.salux.com.br/SxServices/SADT.svc.wsdl"/>
 </catalog>
