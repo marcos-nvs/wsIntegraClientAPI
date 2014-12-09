@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="file:/D:/Cientificalab/Divinópolis/lab.wsdl" uri="wsdl/lab.wsdl"/>
-    <system systemId="http://aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS?wsdl" uri="wsdl/aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS.wsdl"/>
     <system systemId="http://ciewebservice.dasa.com.br/wsintegra/VerificaConexao?wsdl" uri="wsdl/ciewebservice.dasa.com.br/wsintegra/VerificaConexao.wsdl"/>
     <system systemId="http://ciewebservice.dasa.com.br:80/wsintegra/VerificaConexao?xsd=1" uri="wsdl/ciewebservice.dasa.com.br_80/wsintegra/VerificaConexao.xsd_1.xsd"/>
+    <system systemId="http://aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS?wsdl" uri="wsdl/aplicacao-homologacao.saude.gov.br/ws-siscan/SiscanWS.wsdl"/>
+    <system systemId="http://ciewebservice.dasa.com.br/wscie/WsCie?wsdl" uri="wsdl/ciewebservice.dasa.com.br/wscie/WsCie.wsdl"/>
+    <system systemId="http://ciewebservice.dasa.com.br:80/wscie/WsCie?xsd=1" uri="wsdl/ciewebservice.dasa.com.br_80/wscie/WsCie.xsd_1.xsd"/>
+    <system systemId="file:/D:/DASA/SQDASA%20-%20Alvaro/emendaContratoService11.wsdl" uri="wsdl/emendaContratoService11.wsdl"/>
+    <system systemId="http://sqdasahomolog.dasa.com.br/sqdasa/ws/emendaContrato/emendaContratoService.wsdl?wsdl" uri="wsdl/sqdasahomolog.dasa.com.br/sqdasa/ws/emendaContrato/emendaContratoService.wsdl.wsdl"/>
+    <system systemId="http://hdi.hepic.com.br:8080/HepicWS/api/lab?wsdl" uri="wsdl/hdi.hepic.com.br_8080/HepicWS/api/lab.wsdl"/>
+    <system systemId="http://webtec.salux.com.br/SxServices/SADT.svc?wsdl" uri="wsdl/webtec.salux.com.br/SxServices/SADT.svc.wsdl"/>
 </catalog>
