@@ -10,6 +10,19 @@
   <name>wsintegraClientAPI</name>
   <url>http://maven.apache.org</url>
     <build>
+        <resources>
+            <resource>
+                <targetPath>META-INF</targetPath>
+                <directory>src</directory>
+                <includes>
+                    <include>jax-ws-catalog.xml</include>
+                    <include>wsdl/**</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.jvnet.jax-ws-commons</groupId>
@@ -59,6 +72,21 @@
                             <staleFile>${project.build.directory}/jaxws/stale/lab.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-lab</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>webtec.salux.com.br/SxServices/SADT.svc.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <wsdlLocation>http://webtec.salux.com.br/SxServices/SADT.svc?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/SADT.svc.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-SADT.svc</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>
